@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'main',
     'modeltranslation',
-    
+    'corsheaders',
+
 
 ]
 
@@ -55,7 +56,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CORS_ALLOWED_ORIGINS = [
+    "https://yourdomain.com",
+    "http://localhost:3000",
+    "http://localhost:8000",  # Для разработки на localhost
+    "http://localhost:8080",  # Для Swagger UI
+    # Добавьте другие разрешенные хосты или IP-адреса
+     # Добавьте другие разрешенные хосты или IP-адреса
+]
 ROOT_URLCONF = 'media.urls'
 
 TEMPLATES = [
