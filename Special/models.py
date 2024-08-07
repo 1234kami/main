@@ -15,8 +15,8 @@ class News(models.Model):
     publication_date = models.DateTimeField("Дата публикации", auto_now_add=True)
 
     class Meta:
-        verbose_name = "Спецпроекты "
-        verbose_name_plural = "Спецпроекты "
+        verbose_name = "Спецпроекты"
+        verbose_name_plural = "Спецпроекты"
 
     def __str__(self):
         return self.title
@@ -24,9 +24,9 @@ class News(models.Model):
 
 class NewsImage(models.Model):
     article = models.ForeignKey(News, related_name='images', on_delete=models.CASCADE)
-    image = models.ImageField(_("Изображение"), upload_to='special_images/')
+    image = models.ImageField(_("Изображение"), upload_to='news_images/')
     title = models.CharField(_("Заголовок"), max_length=200)
 
     class Meta:
-        verbose_name = _("Изображение Спецпроекты ")
+        verbose_name = _("Изображение Спецпроекты")
         verbose_name_plural = _("Изображения Спецпроекты")
