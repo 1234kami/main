@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'modeltranslation',
     'corsheaders',
     'Special',
+    'call',
 ]
 
 MIDDLEWARE = [
