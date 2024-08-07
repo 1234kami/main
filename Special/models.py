@@ -6,7 +6,7 @@ LANG_CHOICES = (
     ("RU", "Русский язык")
 )
 
-class NewsArticle(models.Model):
+class News(models.Model):
     language = models.CharField('Язык', choices=LANG_CHOICES, default='RU', max_length=255, null=True, blank=True)
     title = models.CharField("Заголовок", max_length=200)
     content = models.TextField("Содержание")
@@ -15,18 +15,18 @@ class NewsArticle(models.Model):
     publication_date = models.DateTimeField("Дата публикации", auto_now_add=True)
 
     class Meta:
-        verbose_name = "Новость"
-        verbose_name_plural = "Новости"
+        verbose_name = "Спецпроекты "
+        verbose_name_plural = "Спецпроекты "
 
     def __str__(self):
         return self.title
 
 
-class NewsArticleImage(models.Model):
-    article = models.ForeignKey(NewsArticle, related_name='images', on_delete=models.CASCADE)
-    image = models.ImageField(_("Изображение"), upload_to='news_images/')
+class NewsImage(models.Model):
+    article = models.ForeignKey(News, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(_("Изображение"), upload_to='special_images/')
     title = models.CharField(_("Заголовок"), max_length=200)
 
     class Meta:
-        verbose_name = _("Изображение новости")
-        verbose_name_plural = _("Изображения новостей")
+        verbose_name = _("Изображение Спецпроекты ")
+        verbose_name_plural = _("Изображения Спецпроекты")

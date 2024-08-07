@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import NewsArticle, NewsArticleImage
 
+
 class NewsArticleImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsArticleImage
@@ -12,3 +13,4 @@ class NewsArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsArticle
         fields = ['id', 'language', 'title', 'content', 'category', 'views', 'publication_date', 'images']
+

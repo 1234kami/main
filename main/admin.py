@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import NewsArticle, NewsArticleImage
 
+
 class NewsArticleImageInline(admin.TabularInline):
     model = NewsArticleImage
     extra = 1  # Количество пустых форм, отображаемых по умолчанию
