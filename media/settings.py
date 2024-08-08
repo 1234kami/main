@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'Special',
     'call',
+    'banner',
 ]
 
 MIDDLEWARE = [
